@@ -1,0 +1,448 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.3.193/W32 for ARM                  03/Apr/2021  23:54:29
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =  
+#        G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Exe\diplom.out
+#    Map file     =  
+#        G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\List\diplom.map
+#    Command line =  
+#        -f C:\Users\Harak\AppData\Local\Temp\EW6F8A.tmp
+#        ("G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\delay.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\DS18b20lib.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\Init.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\keyboard.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\lcd.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\lcd5110.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\main.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\PID_v1.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\startup_stm32f103xb.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\stm32f1xx_it.o"
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Obj\system_stm32f1xx.o" --no_out_extension -o
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\Exe\diplom.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "G:\University\Магистратура\Диплом\исходные
+#        коды\diplom\Debug\List\diplom.map" --config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.2\arm\config\linker\ST\stm32f103x8.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor        = *
+__CPP_Exceptions = Disabled
+__CPP_Language   = C++14
+__Heap_Handler   = Basic
+__SystemLibrary  = DLib
+__dlib_version   = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'4fff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                      0xec
+  .intvec          ro code   0x800'0000    0xec  startup_stm32f103xb.o [1]
+                           - 0x800'00ec    0xec
+
+"P1":                                    0x3108
+  .text            ro code   0x800'00ec   0xdf2  xprintffull_nomb.o [2]
+  .text            ro code   0x800'0ede    0x3a  zero_init3.o [5]
+  .text            ro code   0x800'0f18    0x16  strchr.o [5]
+  .text            ro code   0x800'0f2e     0xa  xsprout.o [2]
+  .text            ro code   0x800'0f38    0x40  xfail_s.o [2]
+  .text            ro code   0x800'0f78    0x36  strlen.o [5]
+  .rodata          const     0x800'0fae     0x1  unwind_debug.o [6]
+  .text            ro code   0x800'0fb0    0x58  memchr.o [5]
+  .text            ro code   0x800'1008   0x230  I64DivMod.o [5]
+  .text            ro code   0x800'1238   0x1a2  DblMul.o [4]
+  .text            ro code   0x800'13dc    0xa6  ABImemcpy.o [5]
+  .text            ro code   0x800'1484    0x70  frexp.o [4]
+  .text            ro code   0x800'14f4    0x2e  DblCmpLe.o [4]
+  .text            ro code   0x800'1524    0x2e  DblCmpGe.o [4]
+  .text            ro code   0x800'1554   0x13a  ldexp.o [4]
+  .text            ro code   0x800'1690    0x3a  DblToS32.o [4]
+  .text            ro code   0x800'16cc    0x22  S32ToDbl.o [4]
+  .text            ro code   0x800'16f0    0xe2  DblSub.o [4]
+  .text            ro code   0x800'17d4   0x246  DblDiv.o [4]
+  .text            ro code   0x800'1a1c    0x28  DblToU32.o [4]
+  .text            ro code   0x800'1a44    0x1a  U32ToDbl.o [4]
+  .text            ro code   0x800'1a5e     0x6  abort.o [2]
+  .text            ro code   0x800'1a64     0x2  I64DivZer.o [5]
+  .text            ro code   0x800'1a68   0x17a  DblAdd.o [4]
+  .text            ro code   0x800'1be4    0x14  exit.o [6]
+  .text            ro code   0x800'1bf8   0x4bc  main.o [1]
+  .text            ro code   0x800'20b4     0x6  ABImemclr4.o [5]
+  .text            ro code   0x800'20bc   0x4a8  Init.o [1]
+  .text            ro code   0x800'2564   0x2ec  lcd.o [1]
+  .text            ro code   0x800'2850    0x18  strcpy.o [5]
+  .text            ro code   0x800'2868   0x36a  PID_v1.o [1]
+  .text            ro code   0x800'2bd4    0x40  delay.o [1]
+  .text            ro code   0x800'2c14    0x40  sprintf.o [2]
+  .text            ro code   0x800'2c54   0x1a8  keyboard.o [1]
+  .text            ro code   0x800'2dfc   0x17c  DS18b20lib.o [1]
+  .text            ro code   0x800'2f78    0x32  ABImemset48.o [5]
+  .text            ro code   0x800'2fac    0x58  system_stm32f1xx.o [1]
+  .rodata          const     0x800'3008    0x28  main.o [1]
+  .text            ro code   0x800'3030    0x28  data_init.o [5]
+  .iar.init_table  const     0x800'3058    0x10  - Linker created -
+  .rodata          const     0x800'3068    0x20  DS18b20lib.o [1]
+  .text            ro code   0x800'3088    0x1e  cmain.o [5]
+  .text            ro code   0x800'30a6     0x4  low_level_init.o [2]
+  .text            ro code   0x800'30aa     0x4  exit.o [2]
+  .text            ro code   0x800'30b0     0xa  cexit.o [5]
+  .rodata          const     0x800'30bc    0x14  main.o [1]
+  .rodata          const     0x800'30d0    0x10  DS18b20lib.o [1]
+  .text            ro code   0x800'30e0    0x10  startup_stm32f103xb.o [1]
+  .rodata          const     0x800'30f0     0xc  main.o [1]
+  .text            ro code   0x800'30fc     0xc  cstartup_M.o [5]
+  .rodata          const     0x800'3108     0x8  main.o [1]
+  .rodata          const     0x800'3110     0x8  main.o [1]
+  .rodata          const     0x800'3118     0x8  main.o [1]
+  .text            ro code   0x800'3120     0x8  stm32f1xx_it.o [1]
+  .text            ro code   0x800'3128     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'312c     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3130     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3134     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3138     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'313c     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3140     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3144     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3148     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'314c     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3150     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3154     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3158     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'315c     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3160     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3164     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3168     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'316c     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3170     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3174     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3178     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'317c     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3180     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3184     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3188     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'318c     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3190     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3194     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'3198     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'319c     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31a0     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31a4     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31a8     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31ac     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31b0     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31b4     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31b8     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31bc     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31c0     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31c4     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31c8     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31cc     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31d0     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31d4     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31d8     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31dc     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31e0     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31e4     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31e8     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31ec     0x4  startup_stm32f103xb.o [1]
+  .text            ro code   0x800'31f0     0x4  startup_stm32f103xb.o [1]
+  .rodata          const     0x800'31f4     0x0  zero_init3.o [5]
+                           - 0x800'31f4  0x3108
+
+"P2", part 1 of 2:                          0xc
+  .bss             zero     0x2000'0000     0x8  delay.o [1]
+  .bss             zero     0x2000'0008     0x4  xfail_s.o [2]
+                          - 0x2000'000c     0xc
+
+"P2", part 2 of 2:                        0x800
+  CSTACK                    0x2000'0010   0x800  <Block>
+    CSTACK         uninit   0x2000'0010   0x800  <Block tail>
+                          - 0x2000'0810   0x800
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'31f4   0x800'ffff  0xce0c
+  0x2000'000c  0x2000'000f     0x4
+  0x2000'0810  0x2000'4fff  0x47f0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xc:
+          0x2000'0000   0xc
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+command line/config:
+    ------------------------------------------------
+    Total:
+
+G:\University\Магистратура\Диплом\исходные коды\diplom\Debug\Obj: [1]
+    DS18b20lib.o               380       48
+    Init.o                   1 192
+    PID_v1.o                   874
+    delay.o                     64                 8
+    keyboard.o                 424
+    lcd.o                      748
+    main.o                   1 212       96
+    startup_stm32f103xb.o      456
+    stm32f1xx_it.o               8
+    system_stm32f1xx.o          88
+    ------------------------------------------------
+    Total:                   5 446      144        8
+
+dl7M_tln.a: [2]
+    abort.o                      6
+    exit.o                       4
+    low_level_init.o             4
+    sprintf.o                   64
+    xfail_s.o                   64                 4
+    xprintffull_nomb.o       3 570
+    xsprout.o                   10
+    ------------------------------------------------
+    Total:                   3 722                 4
+
+dlpp7M_tl_nc.a: [3]
+    ------------------------------------------------
+    Total:
+
+m7M_tl.a: [4]
+    DblAdd.o                   378
+    DblCmpGe.o                  46
+    DblCmpLe.o                  46
+    DblDiv.o                   582
+    DblMul.o                   418
+    DblSub.o                   226
+    DblToS32.o                  58
+    DblToU32.o                  40
+    S32ToDbl.o                  34
+    U32ToDbl.o                  26
+    frexp.o                    112
+    ldexp.o                    314
+    ------------------------------------------------
+    Total:                   2 280
+
+rt7M_tl.a: [5]
+    ABImemclr4.o                 6
+    ABImemcpy.o                166
+    ABImemset48.o               50
+    I64DivMod.o                560
+    I64DivZer.o                  2
+    cexit.o                     10
+    cmain.o                     30
+    cstartup_M.o                12
+    data_init.o                 40
+    memchr.o                    88
+    strchr.o                    22
+    strcpy.o                    24
+    strlen.o                    54
+    zero_init3.o                58
+    ------------------------------------------------
+    Total:                   1 122
+
+shb_l.a: [6]
+    exit.o                      20
+    unwind_debug.o                        1
+    ------------------------------------------------
+    Total:                      20        1
+
+    Gaps                        31        6
+    Linker created                       16    2 048
+----------------------------------------------------
+    Grand Total:            12 621      167    2 060
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'3058          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'3068          --   Gb  - Linker created -
+?main                    0x800'3089         Code  Gb  cmain.o [5]
+ADCInit                  0x800'23ad   0x98  Code  Gb  Init.o [1]
+CSTACK$$Base            0x2000'0010          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0810          --   Gb  - Linker created -
+DMA_ADCInit              0x800'2445   0x30  Code  Gb  Init.o [1]
+DS18b20_Convert          0x800'2dfd   0x36  Code  Gb  DS18b20lib.o [1]
+DS18b20_ReadTemp         0x800'2e33   0x52  Code  Gb  DS18b20lib.o [1]
+GPIO_Init                0x800'27a3   0x7e  Code  Gb  lcd.o [1]
+Init                     0x800'20bd   0x36  Code  Gb  Init.o [1]
+LCD_Clear                0x800'266f   0x10  Code  Gb  lcd.o [1]
+LCD_Command(int)         0x800'25db   0x4a  Code  Gb  lcd.o [1]
+LCD_Data(int)            0x800'2625   0x4a  Code  Gb  lcd.o [1]
+LCD_SetPos               0x800'26a5   0x2e  Code  Gb  lcd.o [1]
+LCD_String               0x800'267f   0x26  Code  Gb  lcd.o [1]
+LCD_WriteData(int)       0x800'2565   0x76  Code  Gb  lcd.o [1]
+LCD_init                 0x800'26d3   0xd0  Code  Gb  lcd.o [1]
+LoadInt                  0x800'029b   0x7a  Code  Lc  xprintffull_nomb.o [2]
+PID::Compute()           0x800'2907  0x138  Code  Gb  PID_v1.o [1]
+PID::PID(double *, double *, double *, double, double, double, int)
+                         0x800'28d1   0x36  Code  Gb  PID_v1.o [1]
+PID::PID(double *, double *, double *, double, double, double, int, int)
+                         0x800'2869   0x68  Code  Gb  PID_v1.o [1]
+PID::SetControllerDirection(int)
+                         0x800'2b99   0x3a  Code  Gb  PID_v1.o [1]
+PID::SetOutputLimits(double, double)
+                         0x800'2b11   0x88  Code  Gb  PID_v1.o [1]
+PID::SetTunings(double, double, double, int)
+                         0x800'2a3f   0xc6  Code  Gb  PID_v1.o [1]
+Region$$Table$$Base      0x800'3058          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'3068          --   Gb  - Linker created -
+SysTick_Handler          0x800'3121    0x8  Code  Gb  stm32f1xx_it.o [1]
+SysTick_Init             0x800'2157   0x12  Code  Gb  Init.o [1]
+SystemInit               0x800'2fad   0x3e  Code  Gb  system_stm32f1xx.o [1]
+TIM1init                 0x800'22a1  0x10c  Code  Gb  Init.o [1]
+TIM4init                 0x800'2169  0x138  Code  Gb  Init.o [1]
+USART_DS18b20            0x800'2e85   0xa2  Code  Gb  DS18b20lib.o [1]
+_GenldFullNoMb           0x800'0bdd  0x274  Code  Lc  xprintffull_nomb.o [2]
+_LdtobFullNoMb           0x800'07d9  0x3d6  Code  Lc  xprintffull_nomb.o [2]
+_LitobFullNoMb           0x800'0689  0x10a  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb          0x800'00ed  0x19e  Code  Gb  xprintffull_nomb.o [2]
+_PutcharsFullNoMb        0x800'0e51   0x2e  Code  Lc  xprintffull_nomb.o [2]
+_PutfldFullNoMb          0x800'0315  0x268  Code  Lc  xprintffull_nomb.o [2]
+_PuttxtFullNoMb          0x800'057d  0x10c  Code  Lc  xprintffull_nomb.o [2]
+_SProut                  0x800'0f2f    0xa  Code  Gb  xsprout.o [2]
+__aeabi_cdcmple          0x800'14f5         Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple         0x800'1525         Code  Gb  DblCmpGe.o [4]
+__aeabi_d2iz             0x800'1691         Code  Gb  DblToS32.o [4]
+__aeabi_d2uiz            0x800'1a1d         Code  Gb  DblToU32.o [4]
+__aeabi_dadd             0x800'1a69         Code  Gb  DblAdd.o [4]
+__aeabi_ddiv             0x800'17d5         Code  Gb  DblDiv.o [4]
+__aeabi_dmul             0x800'1239         Code  Gb  DblMul.o [4]
+__aeabi_dsub             0x800'16f1         Code  Gb  DblSub.o [4]
+__aeabi_i2d              0x800'16cd         Code  Gb  S32ToDbl.o [4]
+__aeabi_ldiv0            0x800'1a65         Code  Gb  I64DivZer.o [5]
+__aeabi_memclr4          0x800'20b5         Code  Gb  ABImemclr4.o [5]
+__aeabi_memcpy           0x800'13dd         Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4          0x800'13fd         Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy8          0x800'13fd         Code  Gb  ABImemcpy.o [5]
+__aeabi_ui2d             0x800'1a45         Code  Gb  U32ToDbl.o [4]
+__aeabi_uldivmod         0x800'1009         Code  Gb  I64DivMod.o [5]
+__cmain                  0x800'3089         Code  Gb  cmain.o [5]
+__exit                   0x800'1be5   0x14  Code  Gb  exit.o [6]
+__iar_Fail_s             0x800'0f39   0x1c  Code  Gb  xfail_s.o [2]
+__iar_Memchr             0x800'0fb1         Code  Gb  memchr.o [5]
+__iar_Memset4_word       0x800'2f79         Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word       0x800'2f79         Code  Gb  ABImemset48.o [5]
+__iar_Strchr             0x800'0f19         Code  Gb  strchr.o [5]
+__iar_dadd               0x800'1701         Code  Gb  DblSub.o [4]
+__iar_data_init3         0x800'3031   0x28  Code  Gb  data_init.o [5]
+__iar_debug_exceptions   0x800'0fae    0x1  Data  Gb  unwind_debug.o [6]
+__iar_dsub               0x800'1a79         Code  Gb  DblAdd.o [4]
+__iar_dsubStart          0x800'1a8b         Code  Gb  DblAdd.o [4]
+__iar_frexp              0x800'1491         Code  Gb  frexp.o [4]
+__iar_frexp64            0x800'1485         Code  Gb  frexp.o [4]
+__iar_frexpl             0x800'1491         Code  Gb  frexp.o [4]
+__iar_ldexp64            0x800'1555         Code  Gb  ldexp.o [4]
+__iar_program_start      0x800'30fd         Code  Gb  cstartup_M.o [5]
+__iar_scalbln64          0x800'1555         Code  Gb  ldexp.o [4]
+__iar_scalbn64           0x800'1555         Code  Gb  ldexp.o [4]
+__iar_zero_init3         0x800'0edf   0x3a  Code  Gb  zero_init3.o [5]
+__low_level_init         0x800'30a7    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f103xb.o [1]
+_call_main               0x800'3095         Code  Gb  cmain.o [5]
+_exit                    0x800'30b1         Code  Gb  cexit.o [5]
+_main                    0x800'30a3         Code  Gb  cmain.o [5]
+abort                    0x800'1a5f    0x6  Code  Gb  abort.o [2]
+checkKeys                0x800'2d1f   0xc2  Code  Gb  keyboard.o [1]
+convert_T                0x800'30d0   0x10  Data  Lc  DS18b20lib.o [1]
+delay_ms                 0x800'2bd5   0x20  Code  Gb  delay.o [1]
+exit                     0x800'30ab    0x4  Code  Gb  exit.o [2]
+frexp                    0x800'1485         Code  Gb  frexp.o [4]
+frexpl                   0x800'1485         Code  Gb  frexp.o [4]
+get_tickms               0x800'2bf5    0x8  Code  Gb  delay.o [1]
+initKeyboard             0x800'2c55   0x86  Code  Gb  keyboard.o [1]
+ldexp                    0x800'1555         Code  Gb  ldexp.o [4]
+ldexpl                   0x800'1555         Code  Gb  ldexp.o [4]
+main                     0x800'1bf9  0x34c  Code  Gb  main.o [1]
+memchr                   0x800'0fb1         Code  Gb  memchr.o [5]
+rccInit                  0x800'20f3   0x64  Code  Gb  Init.o [1]
+read_scratch             0x800'3068   0x20  Data  Lc  DS18b20lib.o [1]
+regToCels(unsigned short *, double *, double *)
+                         0x800'1f45  0x11c  Code  Gb  main.o [1]
+scalbln                  0x800'1555         Code  Gb  ldexp.o [4]
+scalblnl                 0x800'1555         Code  Gb  ldexp.o [4]
+scalbn                   0x800'1555         Code  Gb  ldexp.o [4]
+scalbnl                  0x800'1555         Code  Gb  ldexp.o [4]
+scale                    0x800'0793   0x46  Code  Lc  xprintffull_nomb.o [2]
+sec_hand                0x2000'0008    0x4  Data  Lc  xfail_s.o [2]
+sprintf                  0x800'2c15   0x40  Code  Gb  sprintf.o [2]
+strchr                   0x800'0f19         Code  Gb  strchr.o [5]
+strcpy                   0x800'2851         Code  Gb  strcpy.o [5]
+strlen                   0x800'0f79         Code  Gb  strlen.o [5]
+tick_ms                  0x800'2bfd   0x12  Code  Gb  delay.o [1]
+tickms                  0x2000'0000    0x8  Data  Gb  delay.o [1]
+tryKeypad                0x800'2cdb   0x44  Code  Gb  keyboard.o [1]
+
+
+[1] = G:\University\Магистратура\Диплом\исходные коды\diplom\Debug\Obj
+[2] = dl7M_tln.a
+[3] = dlpp7M_tl_nc.a
+[4] = m7M_tl.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  12 621 bytes of readonly  code memory
+     167 bytes of readonly  data memory
+   2 060 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
